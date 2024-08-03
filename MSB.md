@@ -3,9 +3,14 @@ This image passes LSB statistical analysis, but we can't help but think there mu
 
 ### Related term
 
-**1. COMMAND wget:**
+**1. Linux Command:**
 
-wget is a tool in linux. You can use it to retrieve files from different web servers. It supports protocols such as FTP, SFTP, HTTP and HTTPS.
+- "wget" is a tool in linux. You can use it to retrieve files from different web servers. It supports protocols such as FTP, SFTP, HTTP and HTTPS.
+- "grep" for find key word
+- "ls" list content in folder
+- "cat" creat an new file
+- ["vi"](https://helpdesk.inet.vn/knowledgebase/huong-dan-co-ban-su-dung-vi-trong-linux) for Search, replace, delete, save files...
+  example : "vi outputSB.txt" after that we use"/pico" to find keyword pico
 
 **2. FTP (File transfer protocol):**
 
@@ -34,3 +39,11 @@ Hypertext protocol (HTTP) is a protocol or set of rules followed for client-serv
 - The server responds with a SYN/ACK packet, confirming receipt of the connection request.
 - The client receives the SYN/ACK packet and replies with its own ACK packet.
 Once a connection is established, TCP works by dividing the transmitted data into segments, each segment is packaged into a data packet and sent to its destination.
+
+### Approach
+
+The description and name of challenge suggests data may be hidden in the Most Significant Bit (MSB) of the RGB pixels values within the image.
+
+Rather than writing a program to do this analysis, a quick google search found a python tool sigBits.py that can extract data from both LSB and MSB for analysis.
+
+**1. wget 
