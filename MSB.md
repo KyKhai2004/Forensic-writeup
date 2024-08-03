@@ -25,3 +25,12 @@ This protocol is really the same as FTP; it is just different that all the files
 **4. The difference between HTTP vs. HTPPS:**
 
 Hypertext protocol (HTTP) is a protocol or set of rules followed for client-server communication. When you visit a website, the browser sends an HTTP request to the web server and the web server sends an HTTP response. The web server and your browser will exchange data in plain text. To summarize, the HTTP protocol is the communication network that supports the art facility. As the name suggests, hypertext security protocol (HTTPS) is a more secure version or extension of the HTTP protocol. In HTTPS, the browser and server establish a secure, encrypted connection before transmitting data.
+
+**5. TCP (transmission controll protocol):**
+
+![TCP](https://blog.vinahost.vn/wp-content/uploads/2021/11/giao-thuc-tcp-la-gi-1.png)
+
+- The client sends the server a SYN packet — a connection request from its source port to the server's destination port.
+- The server responds with a SYN/ACK packet, confirming receipt of the connection request.
+- The client receives the SYN/ACK packet and replies with its own ACK packet.
+Once a connection is established, TCP works by dividing the transmitted data into segments, each segment is packaged into a data packet and sent to its destination.
