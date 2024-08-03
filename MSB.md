@@ -8,9 +8,40 @@ This image passes LSB statistical analysis, but we can't help but think there mu
 - "wget" is a tool in linux. You can use it to retrieve files from different web servers. It supports protocols such as FTP, SFTP, HTTP and HTTPS.
 - "grep" for find key word
 - "ls" list content in folder
-- "cat" creat an new file
 - ["vi"](https://helpdesk.inet.vn/knowledgebase/huong-dan-co-ban-su-dung-vi-trong-linux) for Search, replace, delete, save files...
   example : "vi outputSB.txt" after that we use"/pico" to find keyword pico
+- Compare file opening commands in Linux command line
+In the Linux environment, there are many different commands used to open and view the contents of files. Each command has its own characteristics and uses. Below is a detailed comparison between some popular commands:
+
+1. cat command:
+Function: Display the entire content of one or more files on the screen.
+Advantages: Simple, fast.
+Disadvantages: Not suitable for files that are too large because they can overflow the screen.
+Usage: cat file_name
+For example: cat log.txt
+2. More command:
+Function: Displays the content of the file page by page, helping you view the content slowly.
+Advantages: Easy to use, suitable for medium sized files.
+Disadvantages: Can only view from beginning to end, cannot search quickly.
+Usage: more file_name
+For example: more config.txt
+3. less command:
+Function: Similar to more but provides more features, such as searching, moving up and down in files, viewing by line number, etc.
+Advantages: Flexible, powerful, suitable for many uses.
+Cons: Can be more complicated for beginners.
+Usage: less file_name
+For example: less output.log
+4. Text editor (vi, nano, emacs):
+Function: Not only view but also allows you to edit the content of the file.
+Advantages: Flexible, offers many text editing features.
+Cons: Needs time to get used to commands and keyboard shortcuts.
+Use:
+en file_name
+nano file_name
+emacs file_name
+For example: vi script.sh
+
+press "h" for vision list of short key
 
 **2. FTP (File transfer protocol):**
 
@@ -46,4 +77,33 @@ The description and name of challenge suggests data may be hidden in the Most Si
 
 Rather than writing a program to do this analysis, a quick google search found a python tool sigBits.py that can extract data from both LSB and MSB for analysis.
 
-**1. wget 
+**STEP 1**
+
+use this code bellow to download the picture
+
+```
+$ wget https://artifacts.picoctf.net/c/306/Ninja-and-Prince-Genji-Ukiyoe-Utagawa-Kunisada.flag.png
+```
+then use command "ls" to check the file is exist or not
+**STEP 2**
+
+use this command to downloan python tool, which is can read deep data in picture
+```
+$ wget https://raw.githubusercontent.com/Pulho/sigBits/master/sigBits.py
+```
+
+**STEP 3**
+
+use this command to read the picture then use "ls" to check the file name "outputSB.txt"
+```
+$ python3 sigBits.py -t=msb Ninja-and-Prince-Genji-Ukiyoe-Utagawa-Kunisada.flag.png
+```
+
+**STEP 4**
+use of the command less, nano, vi, emacs to read and find the key word "pico"
+
+finally you will have the flag:
+```
+picoCTF{15_y0ur_que57_qu1x071c_0r_h3r01c_572ad5fe}
+```
+
